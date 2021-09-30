@@ -31,7 +31,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun cancelAlarms() {
         AlarmPlayer.instance.stop()
-        NotificationHelper().dismissNotification(this)
         AlarmHelper().stopAlarmManager(this)
     }
 }

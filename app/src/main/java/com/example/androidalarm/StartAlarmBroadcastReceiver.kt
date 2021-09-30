@@ -11,6 +11,5 @@ class StartAlarmBroadcastReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context?, intent: Intent?) {
         AlarmPlayer.instance.playAlarm(context!!)
-        NotificationHelper().displayNotification(context)
     }
 }

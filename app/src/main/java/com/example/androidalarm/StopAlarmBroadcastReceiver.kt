@@ -11,6 +11,5 @@ class StopAlarmBroadcastReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context?, intent: Intent?) {
         AlarmPlayer.instance.stop()
-        NotificationHelper().dismissNotification(context!!)
     }
 }
