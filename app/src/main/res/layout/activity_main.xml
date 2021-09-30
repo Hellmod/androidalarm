@@ -7,41 +7,13 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/favorite_schedule_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="5 segundos"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/favorite_schedule_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="30 segundos"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/favorite_schedule_1" />
-
-    <Button
-        android:id="@+id/choose_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Escolher outro horário"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/favorite_schedule_2" />
-
-    <Button
         android:id="@+id/cancel_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cancelar"
+        android:text="stop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/choose_time" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/alarm_scheduled_to"
@@ -56,5 +28,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/time_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cancel_button" />
+
+    <Button
+        android:id="@+id/ok_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@android:string/ok"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/time_text" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
