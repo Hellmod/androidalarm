@@ -11,7 +11,6 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         private const val NO_ALARM_TEXT = "Nenhum alarme agendado"
-        private const val SHARED_PREFERENCE_NAME = "AlarmText"
     }
 
     private lateinit var binding: ActivityMainBinding
@@ -28,8 +27,6 @@ class MainActivity : AppCompatActivity() {
         binding.okButton.setOnClickListener{
             scheduleAlarm(binding.timeText.text.toString().toLong())
         }
-
-        reloadPreference()
     }
 
     private fun scheduleAlarm(seconds: Long) {
@@ -39,28 +36,13 @@ class MainActivity : AppCompatActivity() {
         AlarmHelper().startAlarmManager(this, seconds)
         val text = "Alarme programado para as $time"
         binding.alarmScheduledTo.text = text
-        saveAlarmText(text)
-    }
-
-    private fun saveAlarmText(text: String) {
-        SharedPreferenceDAO().saveString(this, text, SHARED_PREFERENCE_NAME)
     }
 
     private fun cancelAlarms() {
         AlarmPlayer.instance.stop()
         setText(NO_ALARM_TEXT)
-        saveAlarmText(NO_ALARM_TEXT)
         NotificationHelper().dismissNotification(this)
         AlarmHelper().stopAlarmManager(this)
-    }
-
-    private fun reloadPreference() {
-        setText(
-            SharedPreferenceDAO().restoreString(
-                this,
-                SHARED_PREFERENCE_NAME
-            )
-        )
     }
 
     private fun setText(text: String?) {
