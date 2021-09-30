@@ -4,10 +4,6 @@ import android.content.Context
 import android.media.MediaPlayer
 import android.media.RingtoneManager
 
-/**
- * Responsável pelo efeito sonoro do alarme
- */
-
 class AlarmPlayer private constructor() {
     private var player: MediaPlayer? = null
     fun playAlarm(context: Context) {

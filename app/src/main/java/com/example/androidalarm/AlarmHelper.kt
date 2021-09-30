@@ -7,9 +7,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import java.util.*
 
-/**
- * Responsável por agendar um alarme ou cancelá-lo
- */
 class AlarmHelper {
 
     companion object {
